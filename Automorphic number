@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner scanner=new Scanner(System.in);
+	      int n=scanner.nextInt();
+	      int digit=0;
+	   
+	      while(n>0){
+	           int sqr=n*n;
+	           digit=sqr%10;
+	          break;
+	          }
+	   if(digit==n){
+	       System.out.print("automorphic");	      
+	}
+	  else{
+	      System.out.print("not automorphic");
+	  }
+	
+	}
+}
