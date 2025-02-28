@@ -1,0 +1,137 @@
+1) Find the third max in a 2D Array
+      5 5 5
+      5 5 5
+      5 5 5
+
+
+  public class Main {
+    public static void main(String[] args) {
+        int[][] matrix = {
+                     {5, 5, 5},
+                     {5, 5, 5},
+                     {5, 5, 5} };
+        boolean allSame =true;
+        int firstValue =matrix[0][0]; 
+        for (int i=0;i<3; i++) {
+            for (int j =0;j< 3;j++) {
+                if (matrix[i][j]!=firstValue) {
+                    allSame=false;
+                    break; 
+                }
+            }
+            if (!allSame) 
+            break;
+        }
+        if (allSame) {
+            System.out.println("There is no third max element");
+        } else {
+            System.out.println("The third max element exists"); 
+        }
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2) Sort the matrix
+     5 4 7
+     1 8 3
+     9 6 2
+
+public class Main {
+    public static void main(String[] args) {
+        int[][] array = {
+            {5, 4, 7},
+            {1, 8, 3},
+            {9, 6, 2}
+        };
+        int[]a=new int[9];
+        int n=0;
+        for (int i=0;i<3;i++) {
+            for (int j=0;j<3;j++) {
+                a[n]=array[i][j];
+                n++;
+            }
+        }
+        for(int i =0;i< a.length-1;i++) {
+            for(int j=0;j<a.length-1-i;j++) {
+                if(a[j]>a[j+1]){
+                    int temp=a[j];
+                    a[j]=a[j+1];
+                    a[j+1]=temp;
+                }
+            }
+        }
+        n=0;
+        for (int i=0;i<3;i++) {
+            for (int j=0;j<3;j++) {
+                array[i][j]=a[n];
+                n++;
+            }
+        }
+        for (int i=0;i<3;i++) {
+            for (int j=0;j<3;j++) {
+                System.out.print(array[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3)if input is
+     5 4 7
+     1 8 3
+     9 6 2
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        int row = sc.nextInt();
+        int col = sc.nextInt();
+        int[][] a = new int[row][col];
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                a[i][j] = sc.nextInt();
+            }
+        }
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                a[j][i] = a[i][j];
+            }
+        }
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                System.out.print(a[i][j]+" ");
+            }
+            System.out.println();
+        }
+        sc.close();
+    }
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4) adundant number 
+
+public class Main {
+    public static void main(String[] args) {
+        int[][] a={
+                {5, 7, 12, 2},
+                {4, 5, 14, 9},
+                {3, 6, 8, 7},
+                {45, 1, 4, 4}};
+        int count =0;
+        for (int i=0;i<4;i++) {
+            for (int j=0;j<4;j++) {
+                if (isAbundant(a[i][j])) {
+                    count++;}}}
+        System.out.println("Abundant Numbers Count: " + count);
+        System.out.println(count%2==0 ? "YES" : "NO");
+    }
+    public static boolean isAbundant(int num) {
+        int sum=0;
+        for (int i=1;i<num;i++) {
+            if (num%i==0) {
+                sum+=i;}}
+        return sum>num;
+    }
+}
