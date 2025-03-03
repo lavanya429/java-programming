@@ -1,0 +1,28 @@
+class Shape{
+    public void area(){
+         }
+    }
+class Rectangle extends Shape{
+    int length;
+    int breath;
+    public Rectangle(int length,int breath){
+        this.length=length;
+        this.breath=breath;
+    }
+    public void area(){
+        
+        int result=length * breath;
+    System.out.print(result)    ;
+        
+    }
+   
+}
+public class Main{
+    
+    public static void main (String[] args){
+      Rectangle r =new Rectangle(12,10);
+      r.area();
+
+
+}
+}
