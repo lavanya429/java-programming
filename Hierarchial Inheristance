@@ -1,0 +1,77 @@
+class Shape{
+    public void area(){
+         }
+    }
+class Rectangle extends Shape{
+    int length;
+    int breath;
+    public Rectangle(int length,int breath){
+        this.length=length;
+        this.breath=breath;
+    }
+    public void area(){
+        
+        int result=length * breath;
+    System.out.println(result)    ;
+        
+    }
+   
+}
+class triangle extends Shape{
+    int height;
+    int breath;
+    public triangle(int height,int breath){
+        this.height=height;
+        this.breath=breath;
+    }
+    public void area(){
+        
+        double lava=0.5*height*breath;
+    System.out.println(lava)    ;
+        
+    }
+   
+}
+class square extends Shape{
+    int a;
+    public square(int a){
+        this.a=a;
+    
+    }
+    public void area(){
+        
+        int laddu=a*a;
+    System.out.println(laddu);
+        
+    }
+   
+}
+class circle extends Shape{
+    int r;
+    final double pi=3.14;
+    public circle(int r){
+        this.r=r;
+    
+    }
+    public void area(){
+        
+        double laa=pi*r*r;
+    System.out.println(laa) ;
+        
+    }
+   
+}
+public class Main{
+    
+    public static void main (String[] args){
+      Rectangle r =new Rectangle(12,10);
+      triangle  t =new triangle(20,20);
+      square s    =new square (5);
+      circle c    =new circle(2);
+      r.area();
+      t.area();
+      s.area();
+      c.area();
+
+}
+}
