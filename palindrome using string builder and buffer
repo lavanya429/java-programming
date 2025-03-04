@@ -1,0 +1,33 @@
+package palindrome;
+class Palindrome {
+	    public static void main(String[] args) {
+	    	String n="madam";
+	    	String l="123";
+	        StringBuilder s =new StringBuilder(n);
+	        
+	        String Reverse  =s.reverse().toString();
+	        
+	        if (Reverse.equals(n)) {
+	            System.out.println(n+ "is a palindrome");
+	        } 
+	        
+	        else {
+	            System.out.println(n+ " is not a palindrome");
+	        }
+	        StringBuffer a=new StringBuffer(l);
+	        
+	        String Rev  =a.reverse().toString();
+	        
+	        if (Rev.equals(l)) {
+	            System.out.println(l+ "is a palindrome");
+	        } 
+	        
+	        else {
+	            System.out.println(l+ " is not a palindrome");
+	        }
+	        
+	    }
+	}
+
+
+
