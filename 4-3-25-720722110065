@@ -1,0 +1,48 @@
+-------Reverse the line of Text-----
+
+import java.util.Scanner;
+class Main{
+    public static void main(String[] args) {
+        Scanner scanner =new Scanner(System.in);
+        System.out.print("enter the text: ");
+        String n= scanner.nextLine();
+        
+        String[] words=n.trim().split("\\s+");
+            StringBuilder s=new StringBuilder();
+
+                for (int i=words.length-1;i>=0;i--) {
+                   s.append(words[i]).append(" ");
+                }
+                 ` System.out.println(s.toString().trim());
+            }
+        }
+
+expand the string.......
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner d=new Scanner(System.in);
+        System.out.print("enter a String:");
+        String input=d.nextLine();
+
+        StringBuilder result = new StringBuilder();
+
+        for (int i =0; i < input.length(); i++) {
+            char ch =input.charAt(i);
+            if (ch>='0'&& ch<='9') {
+                int count=ch-'0';
+                char prevChar=result.charAt(result.length() - 1);
+                while (count>1) {
+                    result.append(prevChar);
+                    count--;
+                }
+            } else {
+                result.append(ch);
+            }
+        }
+
+        System.out.println(result);
+    }
+}
