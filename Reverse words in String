@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan=new Scanner(System.in);
+         String s=scan.nextLine();
+        boolean Space =s.startsWith("\"")&&s.endsWith("\"");
+        if (Space) {
+            s=s.substring(1,s.length()-1).trim();
+        }
+        String []words=s.trim().split("\\s+");
+         StringBuilder rev =new StringBuilder();
+        for(int i=words.length-1;i>=0;i--){
+            rev.append(words[i]);
+            if(i>0){
+                rev.append(" ");
+            }
+        }
+       
+        if (Space) {
+            System.out.println("\"" + rev.toString() + "\"");
+        } else {
+            System.out.println(rev.toString());
+        }
+    }
+       
+    }
