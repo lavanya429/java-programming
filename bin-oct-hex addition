@@ -1,0 +1,74 @@
+import java.util.*;
+class App{
+	public static void main(String[] args){
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt(); 
+		int b = sc.nextInt();
+		System.out.println(binAdd(a,b));
+		System.out.println(octAdd(a,b));
+		System.out.println(hexAdd(a,b));
+	}
+	static String hexAdd(int a,int b){
+		int ans = a+b;
+		return hex(ans);
+}
+	static String hex(int n){
+		StringBuilder ans= new StringBuilder();
+         	char hex;
+         	while(n!=0){
+             		int mod = n%16;
+             		int div = n/16;
+             		n = div;
+             		if(mod < 10) hex = (char)('0'+ mod);
+             		else hex = (char)('A'+(mod-10));
+             		ans.append(hex);
+	        }
+		return ans.reverse().toString();
+	}
+	static int octAdd(int a,int b){
+		int ans = a+b;
+		return oct(ans);
+	}
+	static int oct(int n){
+		int ans = 0;
+		int inc = 1;
+		while(n!=0){
+			int mod = n%8;
+			int div = n/8;
+			n = div;
+			ans += mod*inc;
+			inc*=10;
+		}
+		return ans;
+	}
+	static String binAdd(int a,int b){
+		  String stra = String.valueOf(bin(a));
+		String strb = String.valueOf(bin(b));
+		int alen = strb.length()-1;
+		int blen = strb.length()-1;
+		int carry = 0;
+		StringBuilder res = new StringBuilder();
+		while(alen>=0 || blen>=0 || carry>0){
+			int dig1 = (alen>=0)?stra.charAt(alen)-'0':0;
+			int dig2 = (blen>=0)?strb.charAt(blen)-'0':0;
+			int sum = dig1+dig2+carry;
+			res.append(sum%2);
+			carry= sum/2;
+			alen--;
+			blen--;
+		}
+		return res.reverse().toString();
+	}
+	static int bin(int n){
+		int ans = 0;
+		int inc = 1;
+		while(n!=0){
+			int mod = n%2;
+			int div = n/2;
+			n = div;
+			ans += mod*inc;
+			inc*=10;
+		}
+		return ans;
+	}
+}
